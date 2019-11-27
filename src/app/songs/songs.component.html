@@ -1,8 +1,9 @@
 <h2 class="songs-title">Mis canciones Favoritas</h2>
-
+<input type="text" [(ngModel)]="newSong">
+<button (click)="searchSong()">Search song:</button>
 <ul>
     <li *ngFor="let song of songs" >
-        <a href="{{ song.url }}" target="_blank" >{{ song.title }}</a>
+        <a href="{{ song.url }}" target="_blank" >{{ song.name }}</a>
         <div>
             <span>Artist: {{ song.artist }}</span>
         </div>
