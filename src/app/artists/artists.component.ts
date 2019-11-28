@@ -19,7 +19,7 @@ export class ArtistsComponent implements OnInit {
   ngOnInit() {
   }
 
-  searchArtist(){
+  searchArtist(newArtist){
     this.artists=[
       {
         name:"BobbyRivera",
