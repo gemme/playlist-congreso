@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class SongService {
+export default class SongService {
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,6 +16,10 @@ export class SongService {
     // toPromise convert observable into promise
     return this.httpClient.get(API_URL).toPromise();
   }
+}
+
+export function formatting(name ) {
+  return name + ' congreso';
 }
 
 

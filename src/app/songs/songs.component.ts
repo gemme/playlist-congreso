@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SongService } from './song.service';
+import SongService, { formatting } from './song.service';
 interface Response {
   results:{
     trackmatches: {
@@ -28,7 +28,7 @@ export class SongsComponent implements OnInit {
     console.log(this.newSong);
     this.songService.searchSong(this.newSong)
       .then((response: Response) => {
-        console.log('response');
+        console.log(formatting('response'));
         console.log(response);
         this.songs = response.results.trackmatches.track;
       })
