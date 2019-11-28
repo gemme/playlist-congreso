@@ -1,1 +1,5 @@
-<h2>Dertails of artist: {{artistName}}</h2>
+<h2>Details of artist: {{artistName}}</h2>
+
+<img src="{{artist?.image[2]['#text']}}" />
+<p [innerHTML]="artist?.bio.summary"></p>
+<p [innerHTML]="artist?.bio.content"></p>
