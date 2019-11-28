@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArtistService } from './artist.service';
 
 interface Artists{
   name:string;
@@ -14,31 +15,23 @@ export class ArtistsComponent implements OnInit {
   artists:Artists[];
   newArtist="";
 
-  constructor() { }
+  constructor(
+    private artistService: ArtistService
+    ) { }
 
   ngOnInit() {
+
   }
 
-  searchArtist(newArtist){
-    this.artists=[
-      {
-        name:"BobbyRivera",
-        url:"ElBobby.com"
-      },
-      {
-        name:"MikeSias",
-        url:"ElMike.com"
-      },
-      {
-        name:"Angie",
-        url:"Elangie.com"
-      },
-    ]
-      
-    
-  console.log(this.artists);
+  searchArtist(){
+      this.artistService.searchArtist(this.newArtist)
+        .then(response => {
+          console.log(response);
+          this.artists = response.results.artistmatches.artist;
+        })
+        .catch(error => {
+          console.log(error);
+        })
   }
-
-  
 
 }

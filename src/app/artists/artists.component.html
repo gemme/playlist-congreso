@@ -1,2 +1,15 @@
-<input type="text" [(ngModel)]="newArtist">
-<button (click)="searchArtist()">Search artist:</button>
+<br>
+<div>
+    <form (submit)="searchArtist()">
+            <input type="text" [(ngModel)]="newArtist" name="artistName">
+            <button>Search artist:</button>
+    </form>
+</div>
+<div>
+    <ul>
+        <li *ngFor="let artist of artists">
+            <a routerLink="artist/{{artist.name}}">{{artist.name}}</a>
+        </li>
+    </ul>
+</div>
+

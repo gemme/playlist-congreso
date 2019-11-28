@@ -10,7 +10,7 @@ export class ArtistService {
 
   searchArtist(searchValue: string){
     const API_KEY = "37216d501934d4c9786ddb7211dd43a6";
-    const API_URL = `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${searchValue}&api_key=${API_KEY}&format=json`;
+    const API_URL = `http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${searchValue}&api_key=${API_KEY}&format=json`;
 
     return this.httpClient.get(API_URL).toPromise();
   }
